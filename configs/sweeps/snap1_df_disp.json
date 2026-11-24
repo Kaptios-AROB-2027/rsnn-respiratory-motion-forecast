@@ -1,0 +1,54 @@
+{
+  "description": "tanh RNN + SnAp-1, delayed feedback (stored sensitivities), displacement outputs.",
+  "method": "snap1",
+  "static": {
+    "shl_s": [
+      1.2,
+      2.4,
+      3.6,
+      4.8,
+      6.0
+    ],
+    "q": [
+      30,
+      60,
+      90,
+      120,
+      150,
+      180
+    ]
+  },
+  "lr": [
+    0.0001,
+    0.0002,
+    0.0005,
+    0.001,
+    0.002,
+    0.005,
+    0.01,
+    0.02
+  ],
+  "select_lr": {
+    "pohl": [
+      0.005,
+      0.01,
+      0.02
+    ],
+    "causal": [
+      0.0001,
+      0.0002,
+      0.0005,
+      0.001,
+      0.002,
+      0.005,
+      0.01,
+      0.02
+    ]
+  },
+  "loop": "stored",
+  "model": {
+    "clip": 100.0,
+    "init_std": 0.02,
+    "target": "displacement"
+  }
+}

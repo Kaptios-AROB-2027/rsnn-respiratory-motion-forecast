@@ -1,0 +1,31 @@
+{
+  "description": "SOD threshold ablation: HC-RSNN with SOD input at threshold 0.05, delayed feedback (stored sensitivities), displacement outputs (input gain re-selected on validation for thresholds >= 0.01).",
+  "method": "rsnn",
+  "loop": "stored",
+  "model_file": "rsnn_base.json",
+  "model": {
+    "network": "hcrsnn",
+    "encoding": "sod",
+    "target": "displacement",
+    "N": 200,
+    "in_gain": 0.4,
+    "out_lr_ratio": 1.0,
+    "sod_threshold": 0.05
+  },
+  "static": {
+    "shl_s": [
+      1.2,
+      2.4,
+      3.6,
+      4.8,
+      6.0
+    ]
+  },
+  "lr": [
+    0.0003,
+    0.001,
+    0.003,
+    0.01,
+    0.03
+  ]
+}

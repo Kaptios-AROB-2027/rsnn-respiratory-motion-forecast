@@ -1,0 +1,40 @@
+{
+  "description": "LMS filter, delayed feedback (stored sensitivities), absolute outputs.",
+  "method": "lms",
+  "static": {
+    "shl_s": [
+      1.2,
+      2.4,
+      3.6,
+      4.8,
+      6.0
+    ]
+  },
+  "lr": [
+    2e-05,
+    5e-05,
+    0.0001,
+    0.0002,
+    0.0005,
+    0.001
+  ],
+  "select_lr": {
+    "pohl": [
+      0.0001,
+      0.0002,
+      0.0005
+    ],
+    "causal": [
+      2e-05,
+      5e-05,
+      0.0001,
+      0.0002,
+      0.0005
+    ]
+  },
+  "loop": "stored",
+  "model": {
+    "clip": 100.0,
+    "target": "absolute"
+  }
+}

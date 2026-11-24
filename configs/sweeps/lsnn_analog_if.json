@@ -1,0 +1,31 @@
+{
+  "description": "LSNN (LIF + ALIF, symmetric feedback, full traces, float weights) with analog input, immediate feedback (Pohl et al.'s reference loop), absolute outputs, stable-lr rule (kappa 2).",
+  "method": "rsnn",
+  "loop": "coupled",
+  "stable_select": 2.0,
+  "model_file": "rsnn_base.json",
+  "model": {
+    "network": "lsnn",
+    "encoding": "analog",
+    "target": "absolute",
+    "N": 256,
+    "in_gain": 1.2,
+    "out_lr_ratio": 1.0
+  },
+  "static": {
+    "shl_s": [
+      1.2,
+      2.4,
+      3.6,
+      4.8,
+      6.0
+    ]
+  },
+  "lr": [
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1
+  ]
+}

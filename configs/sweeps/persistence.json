@@ -1,0 +1,4 @@
+{
+  "description": "Persistence: forecast the last observed sample.",
+  "method": "persistence"
+}

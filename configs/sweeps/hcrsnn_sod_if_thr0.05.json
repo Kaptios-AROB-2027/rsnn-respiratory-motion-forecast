@@ -1,0 +1,32 @@
+{
+  "description": "SOD threshold ablation: HC-RSNN with SOD input at threshold 0.05, immediate feedback (Pohl et al.'s reference loop), absolute outputs, stable-lr rule (kappa 2).",
+  "method": "rsnn",
+  "loop": "coupled",
+  "stable_select": 2.0,
+  "model_file": "rsnn_base.json",
+  "model": {
+    "network": "hcrsnn",
+    "encoding": "sod",
+    "target": "absolute",
+    "N": 256,
+    "in_gain": 0.1,
+    "out_lr_ratio": 3.0,
+    "sod_threshold": 0.05
+  },
+  "static": {
+    "shl_s": [
+      1.2,
+      2.4,
+      3.6,
+      4.8,
+      6.0
+    ]
+  },
+  "lr": [
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "description": "LSNN (LIF + ALIF, symmetric feedback, full traces, float weights) with analog input, delayed feedback (stored sensitivities), displacement outputs.",
+  "method": "rsnn",
+  "loop": "stored",
+  "model_file": "rsnn_base.json",
+  "model": {
+    "network": "lsnn",
+    "encoding": "analog",
+    "target": "displacement",
+    "N": 200,
+    "in_gain": 1.2,
+    "out_lr_ratio": 1.0
+  },
+  "static": {
+    "shl_s": [
+      1.2,
+      2.4,
+      3.6,
+      4.8,
+      6.0
+    ]
+  },
+  "lr": [
+    0.0003,
+    0.001,
+    0.003,
+    0.01,
+    0.03
+  ]
+}
